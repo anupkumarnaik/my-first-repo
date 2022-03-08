@@ -9,5 +9,6 @@ variable "gce_vm_details" {
     disk_size                       = string
     vpc_network                     = string
     startup_scripts                 = string
+    ipv4_add                        = string
   }))
 }
