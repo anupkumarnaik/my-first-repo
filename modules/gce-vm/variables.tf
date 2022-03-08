@@ -12,11 +12,11 @@ variable "gce_zone" {
   description = "GCE zone to create VM in"
 }
 variable "gce_labels" {
-  type        = string
+  type        = map(string)
   description = "optional labels to attch to VM"
 }
 variable "gce_tags" {
-  type        = string
+  type        = list(string)
   description = "gce_tags to attch to VM"
 }
 variable "project_id" {
@@ -37,4 +37,8 @@ variable "vpc_network" {
   type        = string
   default       = "default"
   description = "VPC network to host GCE VMS intos"
+}
+variable "ipv4_add" {
+  type        = string
+  description = "Static IPV4 address"
 }

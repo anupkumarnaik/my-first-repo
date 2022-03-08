@@ -1,5 +1,5 @@
 resource "google_compute_address" "static" {
-  name = "ipv4-address"
+  name = var.ipv4_add
 }
 
 resource "google_compute_instance" "gce-vm" {
