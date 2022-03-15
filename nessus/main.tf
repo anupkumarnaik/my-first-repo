@@ -12,4 +12,6 @@ module "nessus-gce-vms" {
   vpc_network                             = each.value.vpc_network
   startup_scripts                         = each.value.startup_scripts
   ipv4_add                                = each.value.ipv4_add
+  subnetwork                              = each.value.subnetwork
+  address                                 = each.value.address
 }
