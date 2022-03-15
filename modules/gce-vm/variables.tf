@@ -42,3 +42,11 @@ variable "ipv4_add" {
   type        = string
   description = "Static IPV4 address"
 }
+variable "address" {
+  type        = string
+  description = "Static IPV4 address"
+}
+variable "subnetwork" {
+  type        = string
+  description = "subnetwork name"
+}

@@ -1,5 +1,9 @@
 resource "google_compute_address" "static" {
   name = var.ipv4_add
+  address_type  = "INTERNAL"
+  project       = var.project_id 
+  address       = var.address
+  subnetwork    = var.subnetwork  
 }
 
 resource "google_compute_instance" "gce-vm" {
@@ -23,10 +27,10 @@ resource "google_compute_instance" "gce-vm" {
   //}
 
   network_interface {
-    network = var.vpc_network
-    access_config {
-      nat_ip = google_compute_address.static.address
-    }
+    network       = var.vpc_network
+    subnetwork    = var.subnetwork 
+    network_ip    = google_compute_address.static.address 
+    access_config {}
   }
 
   metadata_startup_script = var.startup_scripts
